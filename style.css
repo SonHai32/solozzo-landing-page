@@ -8,6 +8,10 @@
     --secondary-4: #999999;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: "Samsung Regular";
     src: url("./assets/fonts/SAMSUNGSHARPSANS-REGULAR_SMCPS.TTF");
@@ -37,9 +41,18 @@ header {
     height: 60px;
 }
 
-#banner1,
-#banner2,
-#banner3 {
+.banner1,
+.banner2,
+.banner3,
+.cusBanner1,
+.cusBanner2,
+.cusBanner3 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.vertical-banner {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -39,6 +39,14 @@ const BANNER_URLS = [
     "./assets/images/banner2.png",
 ];
 
+const BANNER_CUS_URLS = [
+    "./assets/images/banner1.png",
+    "./assets/images/banner2.png",
+    "./assets/images/banner2.png",
+];
+
+const VERTICAL_BANNER_URL = "./assets/images/bannerv.jpg";
+
 function navigateTo(url) {
     window.open(url);
 }
@@ -73,7 +81,9 @@ $(document).ready(function() {
     init();
 
     function init() {
+        setVerticalBanner();
         setBanner();
+        setCusBanner();
         setFooterIconLink();
         setChatButton();
         setHeaderLink();
@@ -98,9 +108,19 @@ $(document).ready(function() {
     }
 
     function setBanner() {
-        $("#banner1").css("background-image", `url('${BANNER_URLS[0]}`);
-        $("#banner2").css("background-image", `url('${BANNER_URLS[1]}`);
-        $("#banner3").css("background-image", `url('${BANNER_URLS[2]}`);
+        $(".banner1").css("background-image", `url('${BANNER_URLS[0]}`);
+        $(".banner2").css("background-image", `url('${BANNER_URLS[1]}`);
+        $(".banner3").css("background-image", `url('${BANNER_URLS[2]}`);
+    }
+
+    function setCusBanner() {
+        $(".cusBanner1").css("background-image", `url('${BANNER_CUS_URLS[0]}`);
+        $(".cusBanner2").css("background-image", `url('${BANNER_CUS_URLS[1]}`);
+        $(".cusBanner3").css("background-image", `url('${BANNER_CUS_URLS[2]}`);
+    }
+
+    function setVerticalBanner() {
+        $(".vertical-banner").css("background-image", `url('${VERTICAL_BANNER_URL}`);
     }
 
     function setFooterIconLink() {
@@ -123,11 +143,11 @@ $(document).ready(function() {
 });
 
 function createProductOwner(productName, productUrl, productImage, isFirst) {
-    const product = `<div onclick="navigateTo('${productUrl}')" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="cursor-pointer flex justify-center items-end p-4 w-full aspect-square ${
+    const product = `<div onclick="navigateTo('${productUrl}')" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-end p-4 w-full aspect-square ${
     isFirst
-      ? "bg-primary-2 hover:bg-primary-3 transition-all duration-150 delay-75"
-      : "bg-secondary-1"
-  }  transition-all duration-150 delay-75">
+      ? "bg-primary-2 hover:bg-primary-3 "
+      : "bg-secondary-1 hover:bg-gray-200"
+  } ">
         <div class="w-full flex justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <img src="${productImage}" alt="product">
         </div>

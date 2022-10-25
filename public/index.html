@@ -34,6 +34,8 @@
     <script>
         AOS.init();
     </script>
+
+    <div data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine" class="vertical-banner h-[600px] fixed top-28 left-12 border-2 2xl:w-52 2xl:flex xl:flex lg:hidden xl:w-52 lg:w-52 md:hidden sm:hidden"></div>
     <header class="w-full p-1 flex justify-center items-center bg-primary-1 fixed top-0 z-50">
         <div class="2xl:w-7/12 2xl:px-0 xl:w-7/12 xl:px-0 lg:w-7/12 lg:px-0 md:w-8/12 md:px-0 sm:w-full sm:px-5 px-5 w-full h-6 flex justify-between items-center">
             <a href="/" class="w-16 h-16 flex justify-center items-center 2xl:ml-32 xl:ml-32 lg:ml-32 md:ml-20">
@@ -59,24 +61,19 @@
                     </g>
                 </svg>
             </a>
-            <div class="flex justify-between 2xl:ml-32 xl:ml-32 lg:ml-32 md:ml-20">
-                <a class="text-white mx-6 font-thin text-sm" href="/">Trang chủ</a>
-                <a id="headerProduct" class="text-white mx-6 font-thin text-sm cursor-pointer">Sản phẩm</a>
-                <a id="headerAboutUs" class="text-white mx-6 font-thin text-sm cursor-pointer">Về chúng tôi</a>
+            <div class="flex justify-between 2xl:ml-60 xl:-ml-40 lg:ml-2 md:ml-2">
+                <a class="text-white mx-6 font-thin text-sm hover:font-normal hover:text-gray-300 transition-all ease-in-out duration-200" href="/">Trang chủ</a>
+                <a id="headerProduct" class="text-white mx-6 font-thin text-sm cursor-pointer hover:font-normal hover:text-gray-300 transition-all ease-in-out duration-200">Sản
+                    phẩm</a>
+                <a href="#aboutUs" id="headerAboutUs" class="text-white mx-6 font-thin text-sm cursor-pointer hover:font-normal hover:text-gray-300 transition-all ease-in-out duration-200">Về
+                    chúng tôi</a>
             </div>
             <div class="flex justify-between items-center">
                 <div id="headerShop" class="w-6 h-6 flex justify-center items-center cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.25 46.52">
-                        <defs>
-                            <style>
-                                .cls-1 {
-                                    fill: #fff;
-                                }
-                            </style>
-                        </defs>
+                    <svg class="fill-white hover:fill-gray-300 transition-all ease-in-out duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.25 46.52">
                         <g id="Layer_2" data-name="Layer 2">
                             <g id="Layer_1-2" data-name="Layer 1">
-                                <path class="cls-1"
+                                <path
                                     d="M26.91,13.21V8.29a8.29,8.29,0,1,0-16.57,0v4.92H0V46.52H37.25V13.21ZM11.65,8.29a7,7,0,1,1,14,0v4.92H11.65Zm24.29,6.23V39.88H1.31V14.52ZM1.31,45.21V40.53H35.94v4.68Z" />
                             </g>
                         </g>
@@ -91,7 +88,7 @@
             <section class="sec-banner w-full ">
                 <div class="swiper w-full h-80">
                     <div class="swiper-wrapper cursor-pointer">
-                        <div id="banner1" class="swiper-slide flex justify-center items-center w-full h-full relative">
+                        <div id="banner1" class="banner1 swiper-slide flex justify-center items-center w-full h-full relative">
                             <div class="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer ml-6">
                                 <div class="flex justify-center items-center">
                                     <svg class="h-5 w-5 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
@@ -115,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="banner2" class="swiper-slide flex justify-center items-center w-full h-full relative">
+                        <div id="banner2" class="banner2 swiper-slide flex justify-center items-center w-full h-full relative">
                             <div class="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer ml-6">
                                 <div class="flex justify-center items-center">
                                     <svg class="h-5 w-5 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
@@ -139,7 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="banner3" class="swiper-slide flex justify-center items-center w-full h-full relative">
+                        <div id="banner3" class="banner3 swiper-slide flex justify-center items-center w-full h-full relative">
                             <div class="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer ml-6">
                                 <div class="flex justify-center items-center">
                                     <svg class="h-5 w-5 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
@@ -170,9 +167,13 @@
                 <script>
                     var swiper = new Swiper(".swiper", {
                         slidesPerView: 1,
+                        autoplay: {
+                            delay: 2000,
+                        },
                         pagination: {
                             el: ".swiper-pagination",
                         },
+                        loop: true
                     });
                 </script>
             </section>
@@ -188,20 +189,17 @@
             </section>
             <section class="w-full mt-8 ">
                 <div class="swiper cus-swiper w-full h-80">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide flex justify-center items-center w-full bg-primary-1">
-                            <span class="text-white text-2xl">Sản phẩm của khách hàng</span>
+                    <div class="swiper-wrapper w-full h-full">
+                        <div id="cusBanner1" class="cusBanner1 swiper-slide flex justify-center items-center w-full h-full">
                         </div>
-                        <div class="swiper-slide flex justify-center items-center w-full bg-primary-1">
-                            <span class="text-white text-2xl">Sản phẩm của khách hàng</span>
+                        <div id="cusBanner2" class="cusBanner2 swiper-slide flex justify-center items-center w-full h-full">
                         </div>
-                        <div class="swiper-slide flex justify-center items-center w-full bg-primary-1">
-                            <span class="text-white text-2xl">Sản phẩm của khách hàng</span>
+                        <div id="cusBanner3" class="cusBanner3 swiper-slide flex justify-center items-center w-full h-full">
                         </div>
                     </div>
 
-                    <div class="swiper-button-prev text-white"></div>
-                    <div class="swiper-button-next text-white"></div>
+                    <div class="swiper-button-prev text-green-800"></div>
+                    <div class="swiper-button-next text-green-800"></div>
                 </div>
                 <script>
                     var cusSwiper = new Swiper(".cus-swiper", {
@@ -210,6 +208,10 @@
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
                         },
+                        autoplay: {
+                            delay: 2000,
+                        },
+                        loop: true
                     });
                 </script>
             </section>
@@ -325,7 +327,7 @@
                     </div>
                 </div>
             </section>
-            <section data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine" class="w-full mt-8 ">
+            <section id="aboutUs" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine" class="w-full mt-8 ">
                 <ul class="list-[square] w-full mb-4">
                     <li class="text-2xl ml-6 font-medium text-primary-1"><span>Về chúng tôi</span></li>
                 </ul>
