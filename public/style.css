@@ -1,0 +1,68 @@
+:root {
+    --primary-color-1: #003e2a;
+    --primary-color-2: #003c29;
+    --white: #ffffff;
+    --secondary-1: #ebebeb;
+    --secondary-2: #f2f2f2;
+    --secondary-3: #f4f4f4;
+    --secondary-4: #999999;
+}
+
+@font-face {
+    font-family: "Samsung Regular";
+    src: url("./assets/fonts/SAMSUNGSHARPSANS-REGULAR_SMCPS.TTF");
+}
+
+@font-face {
+    font-family: "Samsung Regular";
+    src: url("./assets/fonts/SAMSUNGSHARPSANS-MEDIUM_SMCP.TTF");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Samsung Regular";
+    src: url("./assets/fonts/SAMSUNGSHARPSANS-BOLD.TTF");
+    font-weight: bold;
+}
+
+* {
+    font-family: "Samsung Regular";
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color-2) !important;
+}
+
+header {
+    height: 60px;
+}
+
+#banner1,
+#banner2,
+#banner3 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* custom scrollbar */
+
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}

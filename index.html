@@ -34,9 +34,9 @@
     <script>
         AOS.init();
     </script>
-    <header class="w-full p-1 flex justify-center items-center bg-primary-1">
+    <header class="w-full p-1 flex justify-center items-center bg-primary-1 fixed top-0 z-50">
         <div class="2xl:w-7/12 2xl:px-0 xl:w-7/12 xl:px-0 lg:w-7/12 lg:px-0 md:w-8/12 md:px-0 sm:w-full sm:px-5 px-5 w-full h-6 flex justify-between items-center">
-            <div class="w-16 h-16 flex justify-center items-center">
+            <a href="/" class="w-16 h-16 flex justify-center items-center 2xl:ml-32 xl:ml-32 lg:ml-32 md:ml-20">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.22 47.45">
                     <defs>
                         <style>
@@ -58,14 +58,14 @@
                         </g>
                     </g>
                 </svg>
-            </div>
-            <div class="flex justify-between">
-                <a class="text-white mx-2 font-thin text-sm" href="/">Trang chủ</a>
-                <a class="text-white mx-2 font-thin text-sm" href="/">Sản phẩm</a>
-                <a class="text-white mx-2 font-thin text-sm" href="/">Về chúng tôi</a>
+            </a>
+            <div class="flex justify-between 2xl:ml-32 xl:ml-32 lg:ml-32 md:ml-20">
+                <a class="text-white mx-6 font-thin text-sm" href="/">Trang chủ</a>
+                <a id="headerProduct" class="text-white mx-6 font-thin text-sm cursor-pointer">Sản phẩm</a>
+                <a id="headerAboutUs" class="text-white mx-6 font-thin text-sm cursor-pointer">Về chúng tôi</a>
             </div>
             <div class="flex justify-between items-center">
-                <div class="w-6 h-6 flex justify-center items-center">
+                <div id="headerShop" class="w-6 h-6 flex justify-center items-center cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.25 46.52">
                         <defs>
                             <style>
@@ -86,7 +86,7 @@
         </div>
     </header>
 
-    <main class="w-full p-6 flex flex-col justify-center items-center">
+    <main class="w-full p-6 flex flex-col justify-center items-center mt-20">
         <div class="2xl:w-7/12 xl:w-7/12 lg:w-7/12 md:w-8/12 sm:w-full flex flex-col justify-center items-center">
             <section class="sec-banner w-full ">
                 <div class="swiper w-full h-80">
@@ -140,7 +140,6 @@
                             </div>
                         </div>
                         <div id="banner3" class="swiper-slide flex justify-center items-center w-full h-full relative">
-                            Slide 3
                             <div class="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer ml-6">
                                 <div class="flex justify-center items-center">
                                     <svg class="h-5 w-5 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
@@ -175,9 +174,6 @@
                             el: ".swiper-pagination",
                         },
                     });
-                    swiper.on('slideChangeTransitionStart', function() {
-                        console.log('slide changed');
-                    });
                 </script>
             </section>
             <section class="w-full mt-8 ">
@@ -186,31 +182,7 @@
                 </ul>
                 <div class="flex items-center justify-center w-full">
                     <div id="productOwnerCard" class="grid grid-cols-2 gap-1 w-full">
-                        <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="flex justify-center items-end p-4 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full aspect-square bg-primary-2 hover:bg-primary-3 transition-all duration-150 delay-75">
-                            <div class="flex flex-col w-full h-full justify-end items-center">
-                                <span class="text-2xl text-white font-medium">Tranh để bàn</span>
-                                <div class="flex items-center justify-center">
-                                    <span class="text-sm text-white font-thin mr-1">MUA NGAY</span>
-                                    <svg class="h-4 w-4 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
-                                        <defs>
-                                            <style>
-                                                .cls-1 {
-                                                    fill: #ffffff !important;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                }
-                                            </style>
-                                        </defs>
-                                        <g id="Layer_2" data-name="Layer 2">
-                                            <g id="Layer_1-2" data-name="Layer 1">
-                                                <path class="cls-1"
-                                                    d="M2,38.13a2,2,0,0,1-1.41-.59,2,2,0,0,1,0-2.83L35.3,0,70,34.71a2,2,0,0,1-2.82,2.83L35.3,5.66,3.41,37.54A2,2,0,0,1,2,38.13Z" />
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Product owner card will generate in js script -->
                     </div>
                 </div>
             </section>
@@ -246,8 +218,37 @@
                     <li class="text-2xl ml-6 font-medium text-primary-1"><span>Chính sách dịch vụ</span></li>
                 </ul>
                 <div class="grid grid-cols-3 gap-1">
-                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="w-full relative group p-3 flex justify-center items-end h-40 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="w-full relative group p-3 flex justify-center items-end h-52 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
                         <div class="flex flex-col justify-center items-center absolute group-hover:top-1/2 group-hover:-translate-y-1/2 transition-transform ease-in-out duration-300">
+                            <svg class="w-24 h-24 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125">
+                                <defs>
+                                    <style>
+                                        .ht-1 {
+                                            fill: #F2F2F2;
+                                            stroke: #003e2a;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 2px;
+                                        }
+
+                                        .ht-2 {
+                                            fill: #003e2a;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Layer_2" data-name="Layer 2">
+                                    <g id="Layer_2-2" data-name="Layer 2">
+                                        <circle class="ht-1" cx="62.5" cy="62.5" r="61.5" />
+                                        <path class="ht-2"
+                                            d="M103,45.65,71,28.07a1.84,1.84,0,0,0-1.79,0l-12,6.61a2,2,0,0,0-.74.41L37.19,45.65a1.87,1.87,0,0,0-1,1.64v3.8H14.74a1.87,1.87,0,0,0,0,3.73H36.22v6.7H25.55a1.86,1.86,0,0,0,0,3.72H36.22v9.69H20.58a1.86,1.86,0,1,0,0,3.72H36.22v3.81a1.86,1.86,0,0,0,1,1.63l32,17.59a1.87,1.87,0,0,0,.89.23,1.91,1.91,0,0,0,.9-.23l32-17.59a1.86,1.86,0,0,0,1-1.63V74.12a1.86,1.86,0,1,0-3.72,0v7.24L72,96.9V66L81,61v7.85a1.86,1.86,0,0,0,2.76,1.63l6.87-3.78a1.87,1.87,0,0,0,1-1.63V55.22l8.72-4.79v8.79a1.86,1.86,0,1,0,3.72,0V47.29A1.87,1.87,0,0,0,103,45.65ZM68.25,96.9,40,81.36V50.43L68.25,66Zm1.86-34.15L42,47.29l8.85-4.86L79,57.89Zm12.72-7L54.67,40.3l3.06-1.67L85.88,54.09Zm5,8.24L84.7,65.72V59l3.14-1.73Zm1.91-12L61.59,36.5l8.52-4.67L98.27,47.29Z" />
+                                        <path class="ht-2"
+                                            d="M102.14,64.81a1.86,1.86,0,0,0-1.86,1.86,1.91,1.91,0,0,0,.54,1.32,1.87,1.87,0,0,0,1.32.54,1.83,1.83,0,0,0,1.31-.54,1.88,1.88,0,0,0,.55-1.32,1.88,1.88,0,0,0-1.86-1.86Z" />
+                                        <path class="ht-2"
+                                            d="M13.2,74.93H10.53a1.86,1.86,0,1,0,0,3.72H13.2a1.86,1.86,0,1,0,0-3.72Z" />
+                                        <path class="ht-2"
+                                            d="M20,63.38a1.86,1.86,0,0,0-1.86-1.86,1.88,1.88,0,0,0-1.86,1.86,1.87,1.87,0,0,0,3.18,1.32A1.91,1.91,0,0,0,20,63.38Z" />
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="text-lg font-medium text-primary-1 group-hover:text-white">
                                 Hỏa tốc
                             </span>
@@ -256,8 +257,31 @@
                             </span>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700" class="w-full relative group p-3 flex justify-center items-end h-40 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="700" class="w-full relative group p-3 flex justify-center items-end h-52 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
                         <div class="flex flex-col justify-center items-center absolute group-hover:top-1/2 group-hover:-translate-y-1/2 transition-transform ease-in-out duration-300">
+                            <svg class="w-24 h-24 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125">
+                                <defs>
+                                    <style>
+                                        .fr-1 {
+                                            fill: #F2F2F2;
+                                            stroke: #003e2a;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 2px;
+                                        }
+
+                                        .fr-2 {
+                                            fill: #003e2a;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Layer_2" data-name="Layer 2">
+                                    <g id="Layer_2-2" data-name="Layer 2">
+                                        <circle class="fr-1" cx="62.5" cy="62.5" r="61.5" />
+                                        <path class="fr-2"
+                                            d="M86.49,76.21a7.37,7.37,0,0,0-5.19,2.13,7.26,7.26,0,0,0-2.17,5.15,7.19,7.19,0,0,0,2.17,5.16,7.4,7.4,0,0,0,5.19,2.13,7.29,7.29,0,0,0,0-14.57Zm0,11.33a4.05,4.05,0,1,1,0-8.1,4.05,4.05,0,0,1,0,8.1Zm1.87-35.62a1.59,1.59,0,0,0-1.08-.42H79a1.63,1.63,0,0,0-1.62,1.62V66.4A1.62,1.62,0,0,0,79,68H92.16a1.62,1.62,0,0,0,1.62-1.62V57.51a1.64,1.64,0,0,0-.54-1.2Zm2.18,12.86h-10V54.72h6.06l3.89,3.5ZM46.93,76.21a7.38,7.38,0,0,0-5.19,2.13,7.26,7.26,0,0,0-2.17,5.15,7.19,7.19,0,0,0,2.17,5.16,7.4,7.4,0,0,0,5.19,2.13,7.29,7.29,0,0,0,0-14.57Zm0,11.33a4.05,4.05,0,1,1,0-8.1,4.05,4.05,0,0,1,0,8.1ZM36.12,78.2H32.87V73.89a1.62,1.62,0,1,0-3.24,0v5.93a1.62,1.62,0,0,0,1.62,1.62h4.87a1.62,1.62,0,0,0,0-3.24Zm8.21-8.83a1.62,1.62,0,0,0-1.62-1.62H23.06a1.62,1.62,0,0,0,0,3.24H42.71A1.61,1.61,0,0,0,44.33,69.37Zm-18-5.85L46,63.63A1.64,1.64,0,0,0,47.64,62,1.6,1.6,0,0,0,46,60.39l-19.65-.11h0a1.62,1.62,0,0,0,0,3.24Zm3.31-7.35H49.31a1.62,1.62,0,0,0,0-3.24H29.66a1.62,1.62,0,1,0,0,3.24ZM100.4,54h0L88.8,44.37a1.61,1.61,0,0,0-1-.37H74.13V38.17a1.63,1.63,0,0,0-1.62-1.62H31.25a1.62,1.62,0,0,0-1.62,1.62V50a1.62,1.62,0,1,0,3.24,0V39.79h38V78.2H57.62a1.62,1.62,0,1,0,0,3.24H77.4a1.62,1.62,0,0,0,0-3.24H74.14v-31H87.2L97.76,56l-.11,22.18H96a1.62,1.62,0,0,0,0,3.24h3.29a1.62,1.62,0,0,0,1.62-1.61L101,55.24A1.74,1.74,0,0,0,100.4,54Z" />
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="text-lg font-medium text-primary-1 group-hover:text-white">
                                 Freeship
                             </span>
@@ -266,8 +290,31 @@
                             </span>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900" class="w-full relative group p-3 flex justify-center items-end h-40 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900" class="w-full relative group p-3 flex justify-center items-end h-52 bg-secondary-1 hover:bg-primary-3 transition-all ease-in-out duration-300 cursor-pointer">
                         <div class="flex flex-col justify-center items-center absolute group-hover:top-1/2 group-hover:-translate-y-1/2 transition-transform ease-in-out duration-300">
+                            <svg class="w-24 h-24 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125">
+                                <defs>
+                                    <style>
+                                        .dt-1 {
+                                            fill: #F2F2F2;
+                                            stroke: #003e2a;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 2px;
+                                        }
+
+                                        .dt-2 {
+                                            fill: #003e2a;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Layer_2" data-name="Layer 2">
+                                    <g id="Layer_2-2" data-name="Layer 2">
+                                        <circle class="dt-1" cx="62.5" cy="62.5" r="61.5" />
+                                        <path id="Product_Return" data-name="Product Return" class="dt-2"
+                                            d="M95.67,63a33,33,0,1,1-65.93,0,2.06,2.06,0,1,1,4.12,0A28.85,28.85,0,1,0,62.7,34.12a28.54,28.54,0,0,0-20.13,8.24h7.77a2.06,2.06,0,0,1,0,4.12H38a2.06,2.06,0,0,1-2.06-2.06V32.06a2.06,2.06,0,1,1,4.12,0v7A32.64,32.64,0,0,1,62.7,30,33,33,0,0,1,95.67,63ZM81.25,54.72V73.26a2.07,2.07,0,0,1-1.34,1.93L63.43,81.37a2,2,0,0,1-.73.13,2,2,0,0,1-.72-.13L45.5,75.19a2.05,2.05,0,0,1-1.34-1.93V54.72a2.05,2.05,0,0,1,1.34-1.93L62,46.61a2.13,2.13,0,0,1,1.45,0l16.48,6.18A2.07,2.07,0,0,1,81.25,54.72Zm-29.16,0,10.61,4,10.62-4-10.62-4ZM48.28,71.84l12.36,4.63V62.33L48.28,57.7Zm28.85,0V57.7L64.76,62.33V76.47Z" />
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="text-lg font-medium text-primary-1 group-hover:text-white">
                                 Đổi trả 3 ngày
                             </span>
@@ -304,7 +351,7 @@
                 <div class="flex flex-col w-full">
                     <span class="text-lg text-primary-1 font-medium">Xem thêm tại</span>
                     <div class="flex items-center mt-4">
-                        <div class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4">
+                        <div id="shopeeLink" class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4 cursor-pointer hover:scale-110 transition-all ease-linear duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.94 58.94">
                                 <defs>
                                     <style>
@@ -329,7 +376,7 @@
                             </svg>
                         </div>
 
-                        <div class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4">
+                        <div id="facebookLink" class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4 cursor-pointer hover:scale-110 transition-all ease-linear duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.94 58.94">
                                 <defs>
                                     <style>
@@ -349,7 +396,7 @@
                             </svg>
 
                         </div>
-                        <div class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4">
+                        <div id="insLink" class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4 cursor-pointer hover:scale-110 transition-all ease-linear duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.94 58.94">
                                 <defs>
                                     <style>
@@ -372,7 +419,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4">
+                        <div id="youtubeLink" class="h-12 w-12 border rounded-full border-primary-1 flex justify-center items-center mr-4 cursor-pointer hover:scale-110 transition-all ease-linear duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.94 58.94">
                                 <defs>
                                     <style>
@@ -398,7 +445,7 @@
                         <defs>
                             <style>
                                 .cls-footer-logo {
-                                    fill: #000000;
+                                    fill: #003E2A;
                                 }
                             </style>
                         </defs>
@@ -446,6 +493,42 @@
 
         </div>
     </footer>
+    <div class="fixed bottom-48 right-0 p-4 flex flex-col justify-center items-center">
+        <div id="chatBox" title="Chat với Shop" class="w-16 h-16 flex justify-center items-center rounded-full bg-primary-1 my-4 p-3 hover:scale-125 hover:shadow-md transition-all ease-in-out duration-300 cursor-pointer">
+            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.05 61.7">
+                <defs>
+                    <style>
+                        .chat-1 {
+                            fill: #fff;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="chat-1"
+                            d="M74.22,50.07a22.5,22.5,0,0,0,2.83-11c0-12.13-11-22.77-23.61-22.85A28,28,0,1,0,3.6,41.77L.19,53a1.8,1.8,0,0,0,.39,1.72,1.78,1.78,0,0,0,1.67.56l12.63-2.47a28,28,0,0,0,22.87,1.52,22.54,22.54,0,0,0,27.19,4.84l9.88,1.94a1.79,1.79,0,0,0,2.06-2.29Zm-58.17-.76a1.81,1.81,0,0,0-.88-.23,2,2,0,0,0-.34,0l-10.33,2,2.76-9.07a1.76,1.76,0,0,0-.18-1.45,24.46,24.46,0,1,1,9,8.69Zm54.52,1.06,2,6.59L65,55.48a1.81,1.81,0,0,0-1.23.2,19,19,0,0,1-22.55-3A28.06,28.06,0,0,0,56,28a27.73,27.73,0,0,0-1.2-8.09c10.09.81,18.64,9.43,18.64,19.2a19,19,0,0,1-2.72,9.79A1.78,1.78,0,0,0,70.57,50.37Z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div id="scrollTopButton" title="Lên đầu trang" class="w-16 h-16 flex justify-center items-center rounded-full bg-primary-1 my-4 p-3 hover:scale-125 hover:shadow-md transition-all ease-in-out duration-300 cursor-pointer">
+            <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
+                <defs>
+                    <style>
+                        .arrow-1 {
+                            fill: #ffffff;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="arrow-1"
+                            d="M2,38.13a2,2,0,0,1-1.41-.59,2,2,0,0,1,0-2.83L35.3,0,70,34.71a2,2,0,0,1-2.82,2.83L35.3,5.66,3.41,37.54A2,2,0,0,1,2,38.13Z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
 </body>
 
 </html>
