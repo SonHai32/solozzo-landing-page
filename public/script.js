@@ -93,9 +93,6 @@ $(document).ready(function() {
         $("#headerProduct").on("click", () => {
             window.open(HEADER_PRODUCTS_URL);
         });
-        $("#headerAboutUs").on("click", () => {
-            window.open(HEADER_ABOUT_URL);
-        });
         $("#headerShop").on("click", () => {
             window.open(HEADER_SHOP_URL);
         });
