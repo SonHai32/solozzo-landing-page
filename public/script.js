@@ -45,7 +45,8 @@ const BANNER_CUS_URLS = [
     "./assets/images/banner2.png",
 ];
 
-const VERTICAL_BANNER_URL = "./assets/images/bannerv.jpg";
+const VERTICAL_BANNER_IMAGE = "./assets/images/verticalbanner.png";
+const VERTICAL_BANNER_URL = "https://www.facebook.com/";
 
 function navigateTo(url) {
     window.open(url);
@@ -117,7 +118,10 @@ $(document).ready(function() {
     }
 
     function setVerticalBanner() {
-        $(".vertical-banner").css("background-image", `url('${VERTICAL_BANNER_URL}`);
+        $("#verticalBanner").attr("src", VERTICAL_BANNER_IMAGE);
+        $("#verticalBanner").on('click', () => {
+            window.open(VERTICAL_BANNER_URL)
+        })
     }
 
     function setFooterIconLink() {
