@@ -66,18 +66,12 @@ $(document).ready(function() {
     });
 
     $("#scrollTopButton").on("click", function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $("html, body").animate({
-                    scrollTop: 0,
-                },
-                800,
-                function() {
-                    window.location.hash = hash;
-                }
-            );
-        }
+        event.preventDefault();
+        $("html, body").animate({
+                scrollTop: 0,
+            },
+            300
+        );
     });
     init();
 
