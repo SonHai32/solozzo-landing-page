@@ -45,7 +45,7 @@ const BANNER_CUS_URLS = [
     "./assets/images/BANNER5-1980x634.png",
 ];
 
-const VERTICAL_BANNER_IMAGE = "./assets/images/verticalbanner.png";
+const VERTICAL_BANNER_IMAGE = "./assets/images/192x500_Banner-Sale-Solozzo.png";
 const VERTICAL_BANNER_URL = "https://www.facebook.com/solozzooo/";
 
 function navigateTo(url) {
