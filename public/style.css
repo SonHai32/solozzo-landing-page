@@ -38,7 +38,7 @@ html {
 }
 
 header {
-    height: 60px;
+    height: 50px;
 }
 
 .banner1,
@@ -58,11 +58,35 @@ header {
     background-repeat: no-repeat;
 }
 
+.product-owner-grid:nth-child(1) {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.product-owner-grid:nth-child(2) {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.product-owner-grid:nth-child(3) {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.product-owner-grid:nth-child(4) {
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
 
 /* custom scrollbar */
 
 ::-webkit-scrollbar {
-    width: 18px;
+    width: 20px;
 }
 
 ::-webkit-scrollbar-track {
