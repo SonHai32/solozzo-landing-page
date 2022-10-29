@@ -1,52 +1,52 @@
 const productOwnerList = [{
         isFirst: true,
         productName: "Tranh để bàn",
-        productImage: "./assets/images/carr.png",
-        productUrl: "https://drive.google.com/file/d/11zUGxyptGVGAAjgGzE9F3m3T9dHoNOgT/view?fbclid=IwAR11jtPWj6EGyGflthG1aP2lbi2C1MpJx60jfnf5QMHt_2F_dCYkCIfNo5U",
+        productImage: "./assets/images/ITEM1.png",
+        productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
         productName: "Áo thun",
-        productImage: "./assets/images/carr.png",
-        productUrl: "https://drive.google.com/file/d/11zUGxyptGVGAAjgGzE9F3m3T9dHoNOgT/view?fbclid=IwAR11jtPWj6EGyGflthG1aP2lbi2C1MpJx60jfnf5QMHt_2F_dCYkCIfNo5U",
+        productImage: "./assets/images/ITEM1.png",
+        productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
-        productName: "Áo thun",
-        productImage: "./assets/images/carr.png",
-        productUrl: "https://drive.google.com/file/d/11zUGxyptGVGAAjgGzE9F3m3T9dHoNOgT/view?fbclid=IwAR11jtPWj6EGyGflthG1aP2lbi2C1MpJx60jfnf5QMHt_2F_dCYkCIfNo5U",
+        productName: "Móc Khóa",
+        productImage: "./assets/images/ITEM1.png",
+        productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
-        productName: "Móc khóa",
-        productImage: "./assets/images/carr.png",
-        productUrl: "https://drive.google.com/file/d/11zUGxyptGVGAAjgGzE9F3m3T9dHoNOgT/view?fbclid=IwAR11jtPWj6EGyGflthG1aP2lbi2C1MpJx60jfnf5QMHt_2F_dCYkCIfNo5U",
+        productName: "Phụ kiện khác",
+        productImage: "./assets/images/ITEM1.png",
+        productUrl: "https://shopee.vn/solozzo",
     },
 ];
 
-const HEADER_PRODUCTS_URL = "https://shopee.vn/";
-const HEADER_ABOUT_URL = "https://shopee.vn/";
-const HEADER_SHOP_URL = "https://shopee.vn/";
-const SHOPEE_URL = "https://shopee.vn/";
-const CHAT_URL = "https://shopee.vn/";
-const FACEBOOK_URL = "https://shopee.vn/";
-const INS_URL = "https://shopee.vn/";
-const YOUTUBE_URL = "https://shopee.vn/";
+const HEADER_PRODUCTS_URL = "https://shopee.vn/solozzo";
+const HEADER_ABOUT_URL = "https://shopee.vn/solozzo";
+const HEADER_SHOP_URL = "https://shopee.vn/solozzo";
+const SHOPEE_URL = "https://shopee.vn/solozzo";
+const CHAT_URL = "https://www.facebook.com/solozzooo";
+const FACEBOOK_URL = "https://www.facebook.com/solozzooo";
+const INS_URL = "https://www.instagram.com/solozzone/";
+const YOUTUBE_URL = "https://www.youtube.com/channel/UCtCFOqc_Go4ZOMpc4DYIp_A";
 
 const BANNER_URLS = [
-    "./assets/images/banner1.png",
-    "./assets/images/banner2.png",
-    "./assets/images/banner2.png",
+    "./assets/images/BANNER1.png",
+    "./assets/images/BANNER1-1980x634.png",
+    "./assets/images/BANNER3-1980x634.png",
 ];
 
 const BANNER_CUS_URLS = [
-    "./assets/images/banner1.png",
-    "./assets/images/banner2.png",
-    "./assets/images/banner2.png",
+    "./assets/images/BANNER6-1980x634.png",
+    "./assets/images/BANNER4-1980x634.png",
+    "./assets/images/BANNER5-1980x634.png",
 ];
 
 const VERTICAL_BANNER_IMAGE = "./assets/images/verticalbanner.png";
-const VERTICAL_BANNER_URL = "https://www.facebook.com/";
+const VERTICAL_BANNER_URL = "https://www.facebook.com/solozzooo/";
 
 function navigateTo(url) {
     window.open(url);
@@ -119,9 +119,9 @@ $(document).ready(function() {
 
     function setVerticalBanner() {
         $("#verticalBanner").attr("src", VERTICAL_BANNER_IMAGE);
-        $("#verticalBanner").on('click', () => {
-            window.open(VERTICAL_BANNER_URL)
-        })
+        $("#verticalBanner").on("click", () => {
+            window.open(VERTICAL_BANNER_URL);
+        });
     }
 
     function setFooterIconLink() {
@@ -144,42 +144,12 @@ $(document).ready(function() {
 });
 
 function createProductOwner(productName, productUrl, productImage, isFirst) {
-    const product = `<div onclick="navigateTo('${productUrl}')" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" class="cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-end p-4 w-full aspect-square ${
-    isFirst
-      ? "bg-primary-2 hover:bg-primary-3 "
-      : "bg-secondary-1 hover:bg-gray-200"
-  } ">
+    const product = `<div onclick="navigateTo('${productUrl}')" class="group relative product-owner-grid cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-end p-4 w-full aspect-square bg-secondary-1 hover:bg-primary-3 ">
         <div class="w-full flex justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <img src="${productImage}" alt="product">
+            <img class="group-hover:scale-110 group-hover:z-50 transition-all ease-linear duration-300" src="${productImage}" alt="product">
         </div>
         <div class="flex flex-col w-100">
-            <span id="ownerProductName" class="text-2xl ${
-              isFirst ? "text-white" : "text-primary-1"
-            } font-medium">${productName}</span>
-            <div class="flex items-center justify-center">
-                <a href="${productUrl}" id="ownerProductLink" class="text-sm ${
-    isFirst ? "text-white" : "text-primary-1"
-  } font-thin mr-1">MUA NGAY</a>
-                <svg class="h-4 w-4 rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.6 38.13">
-                    <defs>
-                        <style>
-                            .cls-${isFirst ? "1" : "2"} {
-                                fill: #${
-                                  isFirst ? "ffffff" : "003e2a"
-                                } !important;
-                                width: 100%;
-                                height: 100%;
-                            }
-                        </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <path class="cls-${isFirst ? "1" : "2"}"
-                                d="M2,38.13a2,2,0,0,1-1.41-.59,2,2,0,0,1,0-2.83L35.3,0,70,34.71a2,2,0,0,1-2.82,2.83L35.3,5.66,3.41,37.54A2,2,0,0,1,2,38.13Z" />
-                        </g>
-                    </g>
-                </svg>
-            </div>
+            <span id="ownerProductName" class="text-2xl text-primary-1 group-hover:text-white font-medium">${productName}</span>
         </div>
     </div>`;
 
