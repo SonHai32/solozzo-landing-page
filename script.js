@@ -34,7 +34,7 @@ const INS_URL = "https://www.instagram.com/solozzone/";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCtCFOqc_Go4ZOMpc4DYIp_A";
 
 const BANNER_URLS = [
-    "./assets/images/BANNER1.png",
+    "./assets/images/banner1.png",
     "./assets/images/BANNER1-1980x634.png",
     "./assets/images/BANNER3-1980x634.png",
 ];
