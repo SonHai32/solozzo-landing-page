@@ -100,15 +100,15 @@ $(document).ready(function() {
     }
 
     function setBanner() {
-        $(".banner1").css("background-image", `url('${BANNER_URLS[0]}`);
-        $(".banner2").css("background-image", `url('${BANNER_URLS[1]}`);
-        $(".banner3").css("background-image", `url('${BANNER_URLS[2]}`);
+        $(".banner1").attr("src", BANNER_URLS[0]);
+        $(".banner2").attr("src", BANNER_URLS[1]);
+        $(".banner3").attr("src", BANNER_URLS[2]);
     }
 
     function setCusBanner() {
-        $(".cusBanner1").css("background-image", `url('${BANNER_CUS_URLS[0]}`);
-        $(".cusBanner2").css("background-image", `url('${BANNER_CUS_URLS[1]}`);
-        $(".cusBanner3").css("background-image", `url('${BANNER_CUS_URLS[2]}`);
+        $(".cusBanner1").attr("src", BANNER_CUS_URLS[0]);
+        $(".cusBanner2").attr("src", BANNER_CUS_URLS[1]);
+        $(".cusBanner3").attr("src", BANNER_CUS_URLS[2]);
     }
 
     function setVerticalBanner() {
@@ -140,10 +140,10 @@ $(document).ready(function() {
 function createProductOwner(productName, productUrl, productImage, isFirst) {
     const product = `<div onclick="navigateTo('${productUrl}')" class="group relative product-owner-grid cursor-pointer transition-all duration-300 ease-in-out flex justify-center items-end p-4 w-full aspect-square bg-secondary-1 hover:bg-primary-3 ">
         <div class="w-full flex justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <img class="group-hover:scale-110 group-hover:z-50 transition-all ease-linear duration-300" src="${productImage}" alt="product">
+            <img class="group-hover:scale-110 group-hover:z-50 transition-all ease-linear duration-300 mb-9" src="${productImage}" alt="product">
         </div>
         <div class="flex flex-col w-100">
-            <span id="ownerProductName" class="text-2xl text-primary-1 group-hover:text-white font-medium">${productName}</span>
+            <span id="ownerProductName" class="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl sm:text-sm text-sms text-primary-1 group-hover:text-white font-medium">${productName}</span>
         </div>
     </div>`;
 
