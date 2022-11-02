@@ -1,25 +1,25 @@
 const productOwnerList = [{
         isFirst: true,
         productName: "Tranh để bàn",
-        productImage: "./assets/images/ITEM1.png",
+        productImage: "https://img.upanh.tv/2022/10/31/ITEM1.png",
         productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
         productName: "Áo thun",
-        productImage: "./assets/images/ITEM1.png",
+        productImage: "https://img.upanh.tv/2022/10/31/ITEM1.png",
         productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
         productName: "Móc Khóa",
-        productImage: "./assets/images/ITEM1.png",
+        productImage: "https://img.upanh.tv/2022/10/31/ITEM1.png",
         productUrl: "https://shopee.vn/solozzo",
     },
     {
         isFirst: false,
         productName: "Phụ kiện khác",
-        productImage: "./assets/images/ITEM1.png",
+        productImage: "https://img.upanh.tv/2022/10/31/ITEM1.png",
         productUrl: "https://shopee.vn/solozzo",
     },
 ];
@@ -34,18 +34,19 @@ const INS_URL = "https://www.instagram.com/solozzone/";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCtCFOqc_Go4ZOMpc4DYIp_A";
 
 const BANNER_URLS = [
-    "./assets/images/banner1.png",
-    "./assets/images/BANNER1-1980x634.png",
-    "./assets/images/BANNER3-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER1-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER3-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER1.png",
 ];
 
 const BANNER_CUS_URLS = [
-    "./assets/images/BANNER6-1980x634.png",
-    "./assets/images/BANNER4-1980x634.png",
-    "./assets/images/BANNER5-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER4-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER6-1980x634.png",
+    "https://img.upanh.tv/2022/10/30/BANNER5-1980x634.png",
 ];
 
-const VERTICAL_BANNER_IMAGE = "./assets/images/192x500_Banner-Sale-Solozzo.png";
+const VERTICAL_BANNER_IMAGE =
+    "https://img.upanh.tv/2022/10/30/192x500_Banner-Sale-Solozzo.png";
 const VERTICAL_BANNER_URL = "https://www.facebook.com/solozzooo/";
 
 function navigateTo(url) {
